@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH -A CS4378T_Spring2013  # account name
+#SBATCH -J p6_tsp       # job name
+#SBATCH -o p6_tsp.%j    # name of the output and error file
+#SBATCH -N 1            # total number of nodes requested
+#SBATCH -n 1            # total number of tasks requested
+#SBATCH -p gpu          # queue name
+#SBATCH -t 00:10:00     # expected maximum runtime (hh:mm:ss)
+
+./tsp ts225.tsp 1000000 16
+./tsp ts225.tsp 1000000 16
+./tsp ts225.tsp 1000000 16
+
+./tsp rat575.tsp 1000000 16
+./tsp rat575.tsp 1000000 16
+./tsp rat575.tsp 1000000 16
+
+./tsp d1291.tsp 1000000 16
+./tsp d1291.tsp 1000000 16
+./tsp d1291.tsp 1000000 16
+
+
